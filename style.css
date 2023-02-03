@@ -49,8 +49,10 @@
 
 .nav-bar{ 
       width: 100%;
-      height: 100%;
-      display: block;
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
      
 }
 
@@ -60,9 +62,7 @@
       flex-direction: column;
       gap: 10px;
 }
-.nav-bar ul:nth-child(2){
-      justify-content: end;
-}
+
 .nav-bar ul li.game_item{
       width: 100%;
       padding: 10px;
