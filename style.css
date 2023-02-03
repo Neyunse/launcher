@@ -4,6 +4,10 @@
       box-sizing: border-box;
 }
 
+body {
+      font-family: sans-serif, Arial, Helvetica;
+}
+
 .wrapper{
       width: 100vw;
       height: 100vh;
@@ -12,9 +16,14 @@
       display: flex;
 }
 
+
+
 .wrapper .nav{
-      width: 240px;
+      width: 72px;
       background: #1F1F1F;
+}
+.wrapper .nav.active{
+      width: 240px;
 }
 
 .wrapper .nav .user_container{
@@ -27,20 +36,27 @@
       color: #fff;
        
 }
-.user_container .image{
+.wrapper .nav .user_container .image{
       overflow: hidden;
       border-radius: 50%;
-      width: 24%;
+      width: 52px;
       position: relative;
 }
 
-.user_container .user_det{
+.wrapper .nav .user_container .user_det{
       display: flex;
       flex-direction: column;
       gap: 3px;
       font-weight: bold;
+
+      display: none;
 }
-.user_container .user_det span:nth-child(2){
+
+.wrapper .nav.active .user_container .user_det{
+      display: flex;
+}
+
+.wrapper .nav .user_container .user_det span:nth-child(2){
       color: #7b7b7b;
 }
 
@@ -59,6 +75,11 @@
       gap: 10px;
 }
 
+.nav-bar .game_list{
+      max-height: 100%;
+      overflow: scroll;
+}
+
 .nav-bar ul li.game_item, li.btm_item{
       width: 100%;
       padding: 10px;
@@ -67,13 +88,29 @@
       gap: 11px;
       user-select: none;
       color: #fff;
+      overflow: hidden;
 }
 .nav-bar ul li.game_item .image, li.btm_item .image{
       overflow: hidden;
       border-radius: 20%;
-      width: 24%;
+      width: 52px;
       position: relative;
 }
+
+
+.wrapper .nav .nav-bar ul li.game_item .nav-span, li.btm_item .nav-span{
+      font-weight: bold;
+      display: none;
+}
+
+.wrapper .nav.active .nav-bar ul li.game_item .nav-span{
+      display: block;
+}
+
+.wrapper .nav.active .nav-bar ul li.btm_item .nav-span{
+      display:block;
+}
+
 
 .nav-bar ul li.game_item:hover, li.btm_item:hover{
       background-color: #7b7b7b13;
